@@ -208,3 +208,4 @@ export default function Home({data}) {
 
 - [Gatsby + TypeScript で技術ブログを書くための知見](https://blog.ojisan.io/1st-blog-stack/)
 - [Gatsbyで1時間でブログを作るチュートリアル (Qiitaの記事を移行する)](https://qiita.com/abouch/items/2668fbc185b8dc7b659c)
+- [【Gatsby】Sass + CSS Modulesな環境を作る](https://dezanari.com/gatsby-sass-css-modules/)

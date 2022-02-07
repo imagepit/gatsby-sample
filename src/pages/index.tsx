@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Title from '@/components/Title';
 
 export const query = graphql`
   query MyQuery {
@@ -23,6 +24,7 @@ export const query = graphql`
 export default function Home({ data }) {
   return (
     <main>
+      <Title>タイトル</Title>
       {data.allMarkdownRemark.nodes.map((node) => (
         <div>
           <Link to={`post/${node.parent.name}`}>

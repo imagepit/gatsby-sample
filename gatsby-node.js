@@ -13,9 +13,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   //   throw new Error(result.errors);
   // }
   // const { allPosts } = result.data;
-  // actions.setWebpackConfig({
-  //   resolve: {
-  //     plugins: [new TsconfigPathsPlugin()],
-  //   },
-  // });
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin()],
+    },
+  });
 };
