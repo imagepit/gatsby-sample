@@ -6,6 +6,7 @@ export const query = graphql`
   query MyQuery {
     allMarkdownRemark {
       nodes {
+        id
         frontmatter {
           date
           title
@@ -23,10 +24,10 @@ export const query = graphql`
 
 export default function Home({ data }) {
   return (
-    <main>
+    <main key="1">
       <Title>タイトル</Title>
       {data.allMarkdownRemark.nodes.map((node) => (
-        <div>
+        <div key={node.id}>
           <Link to={`post/${node.parent.name}`}>
             <h2>{node.frontmatter.title}</h2>
           </Link>
