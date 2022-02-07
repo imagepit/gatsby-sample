@@ -142,7 +142,7 @@ export default function Home({data}) {
 }
 ```
 
-## トップページ
+### トップページ
 
 _src/pages/index.tsx_
 
@@ -190,6 +190,20 @@ export default function Home({data}) {
   );
 }
 //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+```
+
+## BootStrap対応
+
+```cmd
+npm install --save react-bootstrap bootstrap
+```
+
+## レイアウト
+
+## カルーセル
+
+```
+npm install --save react-multi-carousel
 ```
 
 ## TOC
