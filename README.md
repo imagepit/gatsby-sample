@@ -194,11 +194,59 @@ export default function Home({data}) {
 
 ## BootStrap対応
 
+_src/components/Layout.tsx_
+
 ```cmd
 npm install --save react-bootstrap bootstrap
 ```
 
 ## レイアウト
+
+- [Reactで複数のchildrenを扱いたい場合の実装パターン](https://zenn.dev/terrierscript/articles/2018-10-24-react-children)
+
+```ts
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import Header from './Header';
+import Footer from './Footer';
+import LeftSide from './LeftSide';
+
+function Layout(props) {
+  return (
+    <>
+      <Container fluid className="px-0 main">
+        <Row className="justify-content-center">
+          <Col>
+            <Header />
+          </Col>
+        </Row>
+      </Container>
+      <Container className="mt-4">
+        <Row>
+          <Col>
+            <LeftSide />
+          </Col>
+          <Col xs={6}>
+            <main>{props.children}</main>
+          </Col>
+          <Col>
+            <LeftSide />
+          </Col>
+        </Row>
+      </Container>
+      <Container fluid className="px-0">
+        <Row>
+          <Col className="footer-col">
+            <Footer />
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+}
+
+export default Layout;
+```
 
 ## カルーセル
 
@@ -211,6 +259,12 @@ npm install --save react-multi-carousel
 ## 画像のBlur対策
 
 ## Syntax hilight
+
+```cmd
+npm install --save gatsby-remark-prismjs prismjs
+```
+
+
 
 ## Github連携
 
