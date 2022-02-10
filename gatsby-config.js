@@ -2,6 +2,8 @@ module.exports = {
   // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
   // don't need to define it here (just if you need to change the options)
   plugins: [
+    // sass css modules
+    `gatsby-plugin-sass`,
     // マークダウンを格納しているフォルダを指定する
     {
       resolve: `gatsby-source-filesystem`,

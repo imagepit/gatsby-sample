@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@/components/Layout';
+import './post.module.sass';
 
 export const query = graphql`
   query ($id: String) {
@@ -20,7 +21,10 @@ export default function Home({ data }) {
     <Layout>
       <main>
         <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+        <div
+          className="toc"
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}
+        />
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </main>
     </Layout>

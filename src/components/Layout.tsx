@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from './Header';
 import Footer from './Footer';
 import LeftSide from './LeftSide';
+import './global.module.sass';
 
 function Layout({ children }) {
   return (
