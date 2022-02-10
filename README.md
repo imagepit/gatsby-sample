@@ -254,7 +254,163 @@ export default Layout;
 npm install --save react-multi-carousel
 ```
 
+```tsx
+export default function Home({ data }) {
+  //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 4,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+  //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+  return (
+    <>
+      //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+      <div>
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots
+          infinite
+          autoPlay
+          autoPlaySpeed={3000}
+          responsive={responsive}
+        >
+          <div>
+            <img
+              src="https://tk.ismcdn.jp/mwimgs/4/a/1140/img_4a30e7236c831a031f5b536bc5ea490628815.jpg"
+              alt="cat"
+              width={450}
+            />
+          </div>
+          <div>
+            <img
+              src="https://tk.ismcdn.jp/mwimgs/4/a/1140/img_4a30e7236c831a031f5b536bc5ea490628815.jpg"
+              alt="cat"
+              width={450}
+            />
+          </div>
+          <div>
+            <img
+              src="https://tk.ismcdn.jp/mwimgs/4/a/1140/img_4a30e7236c831a031f5b536bc5ea490628815.jpg"
+              alt="cat"
+              width={450}
+            />
+          </div>
+          <div>
+            <img
+              src="https://tk.ismcdn.jp/mwimgs/4/a/1140/img_4a30e7236c831a031f5b536bc5ea490628815.jpg"
+              alt="cat"
+              width={450}
+            />
+          </div>
+        </Carousel>
+      </div>
+      //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+      <Layout>
+        {/* <Title>タイトル</Title> */}
+        {data.allMarkdownRemark.nodes.map((node) => (
+          <div key={node.id}>
+            <Link to={`post/${node.parent.name}`}>
+              <h2>{node.frontmatter.title}</h2>
+            </Link>
+            <p>{node.frontmatter.date}</p>
+            <p dangerouslySetInnerHTML={{ __html: node.html }} />
+          </div>
+        ))}
+      </Layout>
+    </>
+  );
+}
+```
+
 ## TOC
+
+```
+npm install --save gatsby-remark-autolink-headers gatsby-remark-table-of-contents
+```
+
+_gatsby-config.js_
+
+```js
+module.exports = ({ root }) => ({
+  plugins: [
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 1,
+              toHeading: 6,
+              className: "table-of-contents"
+            },
+          },
+          `gatsby-remark-autolink-headers`
+          //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+        ],
+      },
+    },
+  ],
+})
+```
+
+_src/pages/post/{MarkdownRemark.parent__(File)__name}.tsx_
+
+```tsx
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '@/components/Layout';
+
+export const query = graphql`
+  query ($id: String) {
+    markdownRemark(id: { eq: $id }) {
+      html
+      //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+      tableOfContents
+      //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+      frontmatter {
+        title
+      }
+    }
+  }
+`;
+export default function Home({ data }) {
+  const { html,tableOfContents } = data.markdownRemark;
+  const { title } = data.markdownRemark.frontmatter;
+  return (
+    <Layout>
+      <main>
+        <h1>{title}</h1>
+        //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+        <div dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+        //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </main>
+    </Layout>
+  );
+}
+```
+
+
 
 ## 画像のBlur対策
 
@@ -263,8 +419,6 @@ npm install --save react-multi-carousel
 ```cmd
 npm install --save gatsby-remark-prismjs prismjs
 ```
-
-
 
 ## Github連携
 

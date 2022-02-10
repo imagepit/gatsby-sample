@@ -27,7 +27,19 @@ module.exports = {
             options: {
               maxWidth: 600,
             }
-          }
+          },
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 2,
+              toHeading: 6,
+              className: "table-of-contents"
+            },
+          },
+          `gatsby-remark-autolink-headers`
         ],
       }
     },
