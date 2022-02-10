@@ -410,7 +410,11 @@ export default function Home({ data }) {
 }
 ```
 
+## Sass + CSS Modules対応
 
+```
+npm install --save node-sass gatsby-plugin-sass
+```
 
 ## 画像のBlur対策
 
