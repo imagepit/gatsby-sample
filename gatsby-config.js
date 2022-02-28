@@ -41,18 +41,10 @@ module.exports = {
               className: "table-of-contents"
             },
           },
-          `gatsby-remark-autolink-headers`
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-prismjs`
         ],
       }
     },
-    // Syntax Highlighting
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-prismjs`
-        ]
-      }
-    }
   ],
 };

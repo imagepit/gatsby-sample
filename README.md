@@ -38,8 +38,6 @@ npm install --save gatsby-source-filesystem
 
 ```js
 module.exports = {
-  // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
-  // don't need to define it here (just if you need to change the options)
   plugins: [
     //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
     // マークダウンを格納しているフォルダを指定する
@@ -409,6 +407,12 @@ export default function Home({ data }) {
   );
 }
 ```
+
+## ScrollSpy
+
+- scrollspyにするにはmdxにしたほうがいいらしい。
+
+
 
 ## Sass + CSS Modules対応
 

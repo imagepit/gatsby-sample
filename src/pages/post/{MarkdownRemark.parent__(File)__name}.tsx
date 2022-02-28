@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@/components/Layout';
+import Toc from '@/components/Toc';
 import './post.module.sass';
 
 export const query = graphql`
@@ -21,6 +22,7 @@ export default function Home({ data }) {
     <Layout>
       <main>
         <h1>{title}</h1>
+        <Toc toc={tableOfContents} />
         <div
           className="toc"
           dangerouslySetInnerHTML={{ __html: tableOfContents }}
