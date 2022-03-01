@@ -28,7 +28,8 @@ nav {
   
   ul.toc-list > li.is-current > a {
     color: black;
-    border-left: 2px solid black
+    border-left: 2px solid black;
+    font-weight:bold;
   }
   
   /* Hide Table of Content when screen is smaller than 1440px */
