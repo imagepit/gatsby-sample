@@ -1,9 +1,11 @@
 nav {
+    background-color: white;
     position: fixed;
-    top: 50vh;
-    right: 5vw;
-    margin-left: 36px;
-    max-width: 250px;
+    top: 80px;
+    right: 10vw;
+    min-width: 300px;
+    max-width: 300px;
+    padding: 15px 0px;
   }
   
   ul.toc-list {
