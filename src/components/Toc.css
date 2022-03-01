@@ -22,11 +22,13 @@ nav {
     color: #c2c2c2;
     text-decoration: none;
     border-bottom: 0;
-    transition: 1s all ease-in-out;
+    transition: 0.5s all ease-in-out;
+    padding-left: 6px;
   }
   
   ul.toc-list > li.is-current > a {
     color: black;
+    border-left: 2px solid black
   }
   
   /* Hide Table of Content when screen is smaller than 1440px */
