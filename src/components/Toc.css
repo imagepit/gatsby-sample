@@ -1,4 +1,4 @@
-nav {
+#toc {
     background-color: white;
     position: fixed;
     top: 80px;
@@ -6,35 +6,35 @@ nav {
     min-width: 300px;
     max-width: 300px;
     padding: 15px 0px;
-  }
+}
   
-  ul.toc-list {
+ul.toc-list {
     padding-left: 0;
-  }
+}
   
-  ul.toc-list > li {
+ul.toc-list > li {
     list-style-type: none;
     margin-left: 15px;
     font-size: 13px;
-  }
+}
   
-  ul.toc-list > li > a {
+ul.toc-list > li > a {
     color: #c2c2c2;
     text-decoration: none;
     border-bottom: 0;
     transition: 0.5s all ease-in-out;
     padding-left: 6px;
-  }
+}
   
-  ul.toc-list > li.is-current > a {
+ul.toc-list > li.is-current > a {
     color: black;
     border-left: 2px solid black;
     font-weight:bold;
-  }
+}
   
-  /* Hide Table of Content when screen is smaller than 1440px */
-  @media only screen and (max-width: 1439px) {
-    nav {
-      display: none;
+/* Hide Table of Content when screen is smaller than 1440px */
+@media only screen and (max-width: 1439px) {
+    #toc{
+        display: none;
     }
-  }
+}
