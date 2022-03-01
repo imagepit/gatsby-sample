@@ -32,7 +32,7 @@ export default function Home({ data }) {
   return (
     <Layout2Col
       main={
-        <main>
+        <main id="main-content">
           <h1>{title}</h1>
           {thumbnail ? (
             <GatsbyImage image={thumbnail} alt={thumbnailAlt} />

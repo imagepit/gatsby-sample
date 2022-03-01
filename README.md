@@ -581,6 +581,10 @@ https://moon-forest-design.github.io/memo/gatsbyjs-remark-code-titles-mdx/
 
 ## SNS対応
 
+## 記事埋め込み（ブログカード）
+
+https://masalib.hatenablog.com/entry/2019/03/16/012357
+
 ## フォント追加
 
 ## マルチステートビルド

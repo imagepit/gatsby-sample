@@ -14,7 +14,7 @@ ul.toc-list {
   
 ul.toc-list > li {
     list-style-type: none;
-    margin-left: 15px;
+    margin: 0 15px;
     font-size: 13px;
 }
   
