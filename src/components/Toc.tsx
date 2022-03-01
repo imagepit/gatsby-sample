@@ -20,7 +20,7 @@ function Items(props) {
 export default function Toc(props) {
   const { toc } = props;
   return (
-    <nav id="toc">
+    <nav id="side-toc">
       <Items toc={toc.items} depth={0} />
     </nav>
   );

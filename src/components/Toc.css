@@ -1,4 +1,4 @@
-#toc {
+#side-toc {
     background-color: white;
     position: fixed;
     top: 80px;
@@ -34,7 +34,7 @@ ul.toc-list > li.is-current > a {
   
 /* Hide Table of Content when screen is smaller than 1440px */
 @media only screen and (max-width: 1439px) {
-    #toc{
+    #side-toc{
         display: none;
     }
 }
