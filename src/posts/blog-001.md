@@ -1,9 +1,14 @@
 ---
 title: "記事001"
 date: "2021-01-18"
+thumbnail: ../images/cat.jpg
+thumbnailAlt: "猫ねこネコ"
 ---
 
 ## 環境構築
+
+![猫の集合写真](../images/cat.jpg 'ねこ猫ネコ')
+
 
 ```
 brew install node@16

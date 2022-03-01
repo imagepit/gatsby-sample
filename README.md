@@ -414,9 +414,13 @@ export default function Home({ data }) {
 npm install --save gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react gatsby-source-filesystem
 ```
 
+TODO Gitの差分を見て追記すること
+
 ## ScrollSpy
 
 - scrollspyにするにはmdxにしたほうがいいらしい。
+
+https://desktopofsamuel.com/how-to-create-a-scroll-tracking-table-of-content-in-gatsby/
 
 ## Sass + CSS Modules対応
 
@@ -424,7 +428,134 @@ npm install --save gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react gatsby-source-fil
 npm install --save node-sass gatsby-plugin-sass
 ```
 
-## 画像のBlur対策
+## 画像対策
+
+### アイキャッチ画像
+
+https://note.com/daikinishimatsu/n/n2ea03a0785fb
+
+```cmd
+npm install --save gatsby-plugin-image gatsby-transformer-sharp gatsby-plugin-sharp
+```
+
+_gatsby-config.js_
+
+```js
+module.exports = {
+  plugins: [
+    //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+    // image
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    // sass css modules
+    `gatsby-plugin-sass`,
+    // set md file directory
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    }, 
+    //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+    // set image file directory
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      }
+    },
+    //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    // mdx
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+          'gatsby-remark-relative-images',
+          //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+          `gatsby-remark-autolink-headers`,
+          //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: true,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
+  ],
+};
+```
+
+_{mdx.parent__(File)__name}.tsx._
+
+```tsx
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout2Col from '@/components/Layout2Col';
+import Toc from '@/components/Toc';
+import Markdown from '@/components/Markdown';
+import './post.module.sass';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
+
+export const query = graphql`
+  query ($id: String) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+        //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+        thumbnail_alt
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+      }
+      body
+      tableOfContents
+    }
+  }
+`;
+
+export default function Home({ data }) {
+  //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  const thumbnail = getImage(data.mdx.frontmatter.thumbnail)
+  const thumbnail_alt = data.mdx.frontmatter.thumbnail_alt
+  //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+  const { body, tableOfContents } = data.mdx;
+  const { title } = data.mdx.frontmatter;
+  return (
+    <Layout2Col>
+      <main>
+        <h1>{title}</h1>
+        //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+        {thumbnail ? <GatsbyImage image={thumbnail} alt={thumbnail_alt} /> : <StaticImage alt="" src="../../../images/default_thumbnail.png" />}
+        //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲追加▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+        <Toc toc={tableOfContents} />
+        <Markdown>{body}</Markdown>
+      </main>
+    </Layout2Col>
+  );
+}
+```
 
 ## Syntax hilight
 
@@ -432,9 +563,25 @@ npm install --save node-sass gatsby-plugin-sass
 npm install --save gatsby-remark-prismjs prismjs
 ```
 
+### コードタイトル
+
+https://moon-forest-design.github.io/memo/gatsbyjs-remark-code-titles-mdx/
+
 ## Github連携
 
 ## netlify連携
+
+## サイト内検索
+
+## SEO対策
+
+## SNS対応
+
+## フォント追加
+
+## マルチステートビルド
+
+https://github.com/gatsbyjs/gatsby-docker
 
 ---
 
