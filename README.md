@@ -422,6 +422,10 @@ TODO Gitの差分を見て追記すること
 
 https://desktopofsamuel.com/how-to-create-a-scroll-tracking-table-of-content-in-gatsby/
 
+```cmd
+npm install --save react-scrollspy
+```
+
 ## Sass + CSS Modules対応
 
 ```

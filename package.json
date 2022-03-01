@@ -52,6 +52,7 @@
     "react-bootstrap": "2.1.2",
     "react-dom": "17.0.2",
     "react-multi-carousel": "2.6.5",
+    "react-scrollspy": "3.4.3",
     "tsconfig-paths-webpack-plugin": "3.5.2"
   },
   "devDependencies": {

@@ -30,17 +30,19 @@ export default function Home({ data }) {
   const { body, tableOfContents } = data.mdx;
   const { title } = data.mdx.frontmatter;
   return (
-    <Layout2Col>
-      <main>
-        <h1>{title}</h1>
-        {thumbnail ? (
-          <GatsbyImage image={thumbnail} alt={thumbnailAlt} />
-        ) : (
-          <StaticImage alt="" src="../../../images/default_thumbnail.png" />
-        )}
-        <Toc toc={tableOfContents} />
-        <Markdown>{body}</Markdown>
-      </main>
-    </Layout2Col>
+    <Layout2Col
+      main={
+        <main>
+          <h1>{title}</h1>
+          {thumbnail ? (
+            <GatsbyImage image={thumbnail} alt={thumbnailAlt} />
+          ) : (
+            <StaticImage alt="" src="../../../images/default_thumbnail.png" />
+          )}
+          <Markdown>{body}</Markdown>
+        </main>
+      }
+      side={<Toc toc={tableOfContents} />}
+    />
   );
 }
