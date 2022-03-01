@@ -5,11 +5,11 @@ export default function Toc(props) {
   console.log(toc);
   return (
     <nav>
-      {/* {toc.items.map(p =>(
-                <li key={p.url}>
-                    <a href={p.url}>{p.title}</a>
-                </li>
-            ))} */}
+      {toc.items.map((p) => (
+        <li key={p.url}>
+          <a href={p.url}>{p.title}</a>
+        </li>
+      ))}
     </nav>
   );
 }

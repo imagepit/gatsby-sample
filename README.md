@@ -408,11 +408,15 @@ export default function Home({ data }) {
 }
 ```
 
+## MDX
+
+```cmd
+npm install --save gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react gatsby-source-filesystem
+```
+
 ## ScrollSpy
 
 - scrollspyにするにはmdxにしたほうがいいらしい。
-
-
 
 ## Sass + CSS Modules対応
 

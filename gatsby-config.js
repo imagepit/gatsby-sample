@@ -1,50 +1,34 @@
 module.exports = {
-  // Since `gatsby-plugin-typescript` is automatically included in Gatsby you
-  // don't need to define it here (just if you need to change the options)
   plugins: [
     // sass css modules
     `gatsby-plugin-sass`,
-    // マークダウンを格納しているフォルダを指定する
+    // set md file directory
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: `posts`,
         path: `${__dirname}/src/posts`,
       },
     }, 
-    // マークダウン関連の設定    
+    // mdx
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        commonmark: true,
-        footnotes: true,
-        pedantic: true,
-        gfm: true,
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-autolink-headers`,
           {
-            resolve: 'gatsby-remark-relative-images'
-          },
-          {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              maxWidth: 600,
-            }
-          },
-          {
-            resolve: `gatsby-remark-table-of-contents`,
-            options: {
-              exclude: "Table of Contents",
-              tight: false,
-              ordered: false,
-              fromHeading: 2,
-              toHeading: 6,
-              className: "table-of-contents"
+              classPrefix: "language-",
+              inlineCodeMarker: true,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
             },
           },
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-prismjs`
         ],
-      }
+      },
     },
   ],
 };

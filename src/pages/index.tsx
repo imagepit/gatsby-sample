@@ -3,18 +3,19 @@ import { graphql, Link } from 'gatsby';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '@/components/Layout';
 import Carousel from 'react-multi-carousel';
+import Markdown from '@/components/Markdown';
 import 'react-multi-carousel/lib/styles.css';
 
 export const query = graphql`
   query MyQuery {
-    allMarkdownRemark {
+    allMdx {
       nodes {
         id
         frontmatter {
           date
           title
         }
-        html
+        body
         parent {
           ... on File {
             name
@@ -88,13 +89,13 @@ export default function Home({ data }) {
       </div>
       <Layout>
         {/* <Title>タイトル</Title> */}
-        {data.allMarkdownRemark.nodes.map((node) => (
+        {data.allMdx.nodes.map((node) => (
           <div key={node.id}>
             <Link to={`post/${node.parent.name}`}>
               <h2>{node.frontmatter.title}</h2>
             </Link>
             <p>{node.frontmatter.date}</p>
-            <p dangerouslySetInnerHTML={{ __html: node.html }} />
+            <Markdown>{node.body}</Markdown>
           </div>
         ))}
       </Layout>
