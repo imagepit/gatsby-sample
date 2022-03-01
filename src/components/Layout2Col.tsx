@@ -5,7 +5,7 @@ import Footer from './Footer';
 import LeftSide from './LeftSide';
 import './global.module.sass';
 
-function Layout({ children }) {
+export default function Layout2Col({ children }) {
   return (
     <>
       <Container fluid className="px-0 main">
@@ -15,12 +15,9 @@ function Layout({ children }) {
           </Col>
         </Row>
       </Container>
-      <Container fluid className="mt-4">
+      <Container className="mt-4">
         <Row>
-          <Col md={3} xs={12}>
-            <LeftSide />
-          </Col>
-          <Col md={6} xs={12}>
+          <Col md={9} xs={12}>
             <main>{children}</main>
           </Col>
           <Col md={3} xs={12}>
@@ -38,5 +35,3 @@ function Layout({ children }) {
     </>
   );
 }
-
-export default Layout;

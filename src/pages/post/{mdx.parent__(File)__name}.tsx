@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '@/components/Layout';
+import Layout2Col from '@/components/Layout2Col';
 import Toc from '@/components/Toc';
 import Markdown from '@/components/Markdown';
 import './post.module.sass';
@@ -21,12 +21,12 @@ export default function Home({ data }) {
   const { body, tableOfContents } = data.mdx;
   const { title } = data.mdx.frontmatter;
   return (
-    <Layout>
+    <Layout2Col>
       <main>
         <h1>{title}</h1>
         <Toc toc={tableOfContents} />
         <Markdown>{body}</Markdown>
       </main>
-    </Layout>
+    </Layout2Col>
   );
 }
