@@ -587,6 +587,22 @@ https://masalib.hatenablog.com/entry/2019/03/16/012357
 
 ## フォント追加
 
+## タグ、カテゴリ一覧
+
+https://blog.killinsun.com/posts/2021/08/24/gatsby-categories-and-tags
+
+## 外部画像取得
+
+https://takumon.com/gatsby-image-of-remote-in-building-by-using-create-remote-file-node
+
+Gatsby.jsでマークダウン内の外部URLの画像もgatsby-imageで最適化したい！
+
+https://qiita.com/akitkat/items/927d5dd97eecef51c10e
+
+## Markdownの出力内容を加工
+
+https://www.mono7555e.com/customize-gatsby-transfer-remark/
+
 ## マルチステートビルド
 
 https://github.com/gatsbyjs/gatsby-docker

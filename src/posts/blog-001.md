@@ -9,8 +9,7 @@ thumbnailAlt: "猫ねこネコ"
 
 ![猫の集合写真](../images/cat.jpg 'ねこ猫ネコ')
 
-
-```
+```cmd
 brew install node@16
 npm install -g gatsby-cli
 ```
