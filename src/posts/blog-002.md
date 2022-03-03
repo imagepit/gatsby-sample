@@ -1,7 +1,7 @@
 ---
 title: "記事002"
 date: "2021-01-19"
-thumbnail: ../images/cat.jpg
+thumbnail: "../images/cat.jpg"
 thumbnailAlt: "猫ねこネコ"
 ---
 
@@ -12,3 +12,4 @@ thumbnailAlt: "猫ねこネコ"
 1. テスト 1
 2. テスト 2
 3. テスト 3
+
