@@ -1,11 +1,5 @@
 module.exports = {
   plugins: [
-    // image
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    // sass css modules
-    `gatsby-plugin-sass`,
     // set md file directory
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,7 +7,7 @@ module.exports = {
         name: `src`,
         path: `${__dirname}/src`,
       },
-    }, 
+    },
     // mdx
     {
       resolve: `gatsby-plugin-mdx`,
@@ -41,5 +35,12 @@ module.exports = {
         ],
       },
     },
+    // sass css modules
+    `gatsby-plugin-sass`,
+    // image
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
   ],
 };
+

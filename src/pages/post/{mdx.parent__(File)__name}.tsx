@@ -37,7 +37,10 @@ export default function Home({ data }) {
           {thumbnail ? (
             <GatsbyImage image={thumbnail} alt={thumbnailAlt} />
           ) : (
-            <StaticImage alt="" src="images/default_thumbnail.png" />
+            <StaticImage
+              alt="no image"
+              src="../../images/default_thumbnail.jpg"
+            />
           )}
           <Markdown>{body}</Markdown>
         </main>

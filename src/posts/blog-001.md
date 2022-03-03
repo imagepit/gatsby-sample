@@ -1,22 +1,19 @@
 ---
 title: "記事001"
 date: "2021-01-18"
-thumbnail: ../images/cat.jpg
 thumbnailAlt: "猫ねこネコ"
 ---
 
 ## 環境構築
 
-![猫の集合写真](../images/cat.jpg 'ねこ猫ネコ')
-
-```cmd
+```
 brew install node@16
 npm install -g gatsby-cli
 ```
 
 ## プロジェクト作成
 
-```cmd
+```
 gatsby new gatsby-starter-ts https://github.com/jpedroschmitz/gatsby-starter-ts
 ```
 
@@ -31,7 +28,7 @@ gatsby develop
 
 ### gatsby-transformer-remarkのインストール
 
-```cmd
+```
 npm install --save gatsby-transformer-remark
 npm install --save gatsby-remark-relative-images
 npm install --save gatsby-remark-images
@@ -39,7 +36,7 @@ npm install --save gatsby-remark-images
 
 ### gatsby-source-filesystemのインストール
 
-```cmd
+```
 npm install --save gatsby-source-filesystem
 ```
 
@@ -164,25 +161,6 @@ import Title from '@/components/Title';
 //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲削除▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
 //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-export const query = graphql`
-query MyQuery {
-  allMarkdownRemark {
-    nodes {
-      frontmatter {
-        date
-        title
-      }
-      html
-      parent {
-        ... on File {
-          name
-        }
-      }
-    }
-  }
-}
-`
-
 export default function Home({data}) {
   return (
     <main>
@@ -203,7 +181,7 @@ export default function Home({data}) {
 
 _src/components/Layout.tsx_
 
-```cmd
+```
 npm install --save react-bootstrap bootstrap
 ```
 
@@ -267,7 +245,7 @@ npm install --save react-multi-carousel
 
 ## Syntax hilight
 
-```cmd
+```
 npm install --save gatsby-remark-prismjs prismjs
 ```
 
