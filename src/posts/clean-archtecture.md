@@ -1,8 +1,6 @@
 ---
 title: "クリーンアーキテクチャ"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "クリーンアーキテクチャ"
 ---
 
 ## カリキュラム
