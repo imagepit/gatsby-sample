@@ -1,9 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
-import LeftSide from './LeftSide';
-import './global.module.sass';
+
+const ContainerStyle = styled(Container)`
+  padding: 0 25px;
+`;
 
 function Layout({ children }) {
   return (
@@ -15,19 +18,13 @@ function Layout({ children }) {
           </Col>
         </Row>
       </Container>
-      <Container fluid className="mt-4">
+      <ContainerStyle fluid className="mt-5">
         <Row>
-          <Col md={3} xs={12}>
-            <LeftSide />
-          </Col>
-          <Col md={6} xs={12}>
+          <Col md={{ span: 10, offset: 1 }} xs={12}>
             <main>{children}</main>
           </Col>
-          <Col md={3} xs={12}>
-            <LeftSide />
-          </Col>
         </Row>
-      </Container>
+      </ContainerStyle>
       <Container fluid className="px-0">
         <Row>
           <Col className="footer-col">

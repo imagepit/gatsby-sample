@@ -6,7 +6,7 @@ function Footer() {
       <span>
         © {new Date().getFullYear()}, Built with {` `}
         {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <a href="https://www.image-pit.com">IMAGEPIT</a>
       </span>
     </footer>
   );

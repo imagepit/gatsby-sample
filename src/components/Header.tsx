@@ -1,15 +1,22 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
+import { StaticImage } from 'gatsby-plugin-image';
 
 function Header() {
   return (
-    <header className="bg-dark">
+    <header>
       <Container>
-        <Navbar expand="md" variant="dark">
-          <Navbar.Brand href="/">テストサイト</Navbar.Brand>
+        <Navbar expand="md" variant="light">
+          <Navbar.Brand href="/">
+            <StaticImage
+              src="../images/logo.png"
+              alt="イメージピット株式会社"
+              width={130}
+              placeholder="none"
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarResponsive" />
-          <Navbar.Collapse id="navbarResponsive">
+          {/* <Navbar.Collapse id="navbarResponsive">
             <Nav as="ul" className="ml-auto">
               <Nav.Item as="li">
                 <Link to="/" className="nav-link" activeClassName="active">
@@ -22,7 +29,7 @@ function Header() {
                 </Link>
               </Nav.Item>
             </Nav>
-          </Navbar.Collapse>
+          </Navbar.Collapse> */}
         </Navbar>
       </Container>
     </header>

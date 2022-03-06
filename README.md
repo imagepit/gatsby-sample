@@ -571,9 +571,9 @@ npm install --save gatsby-remark-prismjs prismjs
 
 https://moon-forest-design.github.io/memo/gatsbyjs-remark-code-titles-mdx/
 
-## Github連携
-
 ## netlify連携
+
+キャプチャ撮っていないけど実際にビルドできた。
 
 ## サイト内検索
 
@@ -599,13 +599,70 @@ Gatsby.jsでマークダウン内の外部URLの画像もgatsby-imageで最適�
 
 https://qiita.com/akitkat/items/927d5dd97eecef51c10e
 
+- [ ] 上記を使ってTerakoyaの記事を実際に入れて確認してみたい。
+- 下記のコマンドでインストールできた。
+
+```
+npm install --save gatsby-remark-images-remote --legacy-peer-deps
+```
+
 ## Markdownの出力内容を加工
 
 https://www.mono7555e.com/customize-gatsby-transfer-remark/
 
+- [ ] 上記を使ってコード部分のハイライトを行いたい
+
 ## マルチステートビルド
 
 https://github.com/gatsbyjs/gatsby-docker
+
+
+## gatsby build時にハマった
+
+- gatsby developではうまく動いていたのが、gatsuby build時では下記のエラーになった。
+- 単純に全ての画像のリンクがうまくいっていないとこのような事象が起きるらしい。。
+
+```
+ ERROR #85901  GRAPHQL
+
+There was an error in your GraphQL query:
+
+Cannot read property 'dir' of null
+
+   1 | query pageUsersimagepitDesktopgatsbyStarterTssrcpagespostmdxParentFileNameTsx856225173($id: String) {
+   2 |   mdx(id: {eq: $id}) {
+   3 |     frontmatter {
+   4 |       title
+   5 |       thumbnailAlt
+>  6 |       thumbnail {
+     |       ^
+   7 |         childImageSharp {
+   8 |           gatsbyImageData
+   9 |         }
+  10 |       }
+  11 |     }
+  12 |     body
+  13 |     tableOfContents
+  14 |   }
+  15 | }
+  16 |
+
+File path: /Users/imagepit/Desktop/gatsby-starter-ts/src/pages/post/{mdx.parent__(File)__name}.tsx
+Url path: /post/blog-001/
+Plugin: none
+```
+
+## Styled Components
+
+```
+npm install --save gatsby-plugin-styled-components styled-components babel-plugin-styled-components
+```
+
+```
+module.exports = {
+  plugins: [`gatsby-plugin-styled-components`],
+}
+```
 
 ---
 

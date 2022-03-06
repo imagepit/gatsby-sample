@@ -1,22 +1,22 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout2Col from '@/components/Layout2Col';
-import Toc from '@/components/Toc';
+import Layout from '@/components/Layout';
 import Markdown from '@/components/Markdown';
 import './post.module.sass';
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
 
 export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title
-        thumbnailAlt
         thumbnail {
           childImageSharp {
             gatsbyImageData
           }
         }
+        thumbnailAlt
       }
       body
       tableOfContents
@@ -24,16 +24,26 @@ export const query = graphql`
   }
 `;
 
+const ThumbnailStyle = styled.div`
+  text-align: center;
+  margin-bottom: 2em;
+`;
+const Title = styled.h1`
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+`;
+
 export default function Home({ data }) {
   const thumbnail = getImage(data.mdx.frontmatter.thumbnail);
   const { thumbnailAlt } = data.mdx.frontmatter;
-  const { body, tableOfContents } = data.mdx;
+  const { body } = data.mdx;
   const { title } = data.mdx.frontmatter;
   return (
-    <Layout2Col
-      main={
-        <main id="main-content">
-          <h1>{title}</h1>
+    <Layout>
+      <main id="main-content">
+        <Title>{title}</Title>
+        <ThumbnailStyle>
           {thumbnail ? (
             <GatsbyImage image={thumbnail} alt={thumbnailAlt} />
           ) : (
@@ -42,10 +52,9 @@ export default function Home({ data }) {
               src="../../images/default_thumbnail.jpg"
             />
           )}
-          <Markdown>{body}</Markdown>
-        </main>
-      }
-      side={<Toc toc={tableOfContents} />}
-    />
+        </ThumbnailStyle>
+        <Markdown>{body}</Markdown>
+      </main>
+    </Layout>
   );
 }

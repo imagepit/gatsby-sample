@@ -31,6 +31,12 @@ ul.toc-list > li.is-current > a {
     border-left: 2px solid black;
     font-weight:bold;
 }
+
+li:has(.is-current){
+    color: black;
+    border-left: 2px solid black;
+    font-weight:bold;
+}
   
 /* Hide Table of Content when screen is smaller than 1440px */
 @media only screen and (max-width: 1439px) {

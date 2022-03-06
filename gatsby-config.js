@@ -1,5 +1,8 @@
 module.exports = {
   plugins: [
+    `gatsby-plugin-image`,
+    // styled components
+    `gatsby-plugin-styled-components`,
     // set md file directory
     {
       resolve: `gatsby-source-filesystem`,
@@ -16,20 +19,11 @@ module.exports = {
         gatsbyRemarkPlugins: [
           'gatsby-remark-relative-images',
           `gatsby-remark-autolink-headers`,
+          `gatsby-remark-images-remote`,
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: true,
-              aliases: {},
-              showLineNumbers: true,
-              noInlineHighlight: false,
             },
           },
         ],
@@ -38,9 +32,8 @@ module.exports = {
     // sass css modules
     `gatsby-plugin-sass`,
     // image
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
   ],
 };
 

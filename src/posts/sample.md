@@ -1,25 +1,24 @@
 ---
 title: "記事001"
 date: "2021-01-18"
-thumbnailAlt: "猫ねこネコ"
 ---
 
 ## 環境構築
 
-```
+```bash
 brew install node@16
 npm install -g gatsby-cli
 ```
 
 ## プロジェクト作成
 
-```
+```bash
 gatsby new gatsby-starter-ts https://github.com/jpedroschmitz/gatsby-starter-ts
 ```
 
 ## 起動
 
-```
+```bash
 cd gatsby-starter-ts
 gatsby develop
 ```
@@ -28,7 +27,7 @@ gatsby develop
 
 ### gatsby-transformer-remarkのインストール
 
-```
+```bash
 npm install --save gatsby-transformer-remark
 npm install --save gatsby-remark-relative-images
 npm install --save gatsby-remark-images
@@ -36,7 +35,7 @@ npm install --save gatsby-remark-images
 
 ### gatsby-source-filesystemのインストール
 
-```
+```bash
 npm install --save gatsby-source-filesystem
 ```
 
@@ -120,7 +119,7 @@ date: "2021-01-18"
 
 _src/pages/post/{MarkdownRemark.parent__(File)__name}.tsx_
 
-```tsx
+```ts
 import React from 'react';
 import { graphql } from "gatsby"
 
@@ -150,7 +149,7 @@ export default function Home({data}) {
 
 _src/pages/index.tsx_
 
-```tsx
+```ts
 import React from 'react';
 //▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼追加▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 import { graphql } from "gatsby"
@@ -181,7 +180,7 @@ export default function Home({data}) {
 
 _src/components/Layout.tsx_
 
-```
+```bash
 npm install --save react-bootstrap bootstrap
 ```
 
@@ -235,7 +234,7 @@ export default Layout;
 
 ## カルーセル
 
-```
+```bash
 npm install --save react-multi-carousel
 ```
 
@@ -245,7 +244,7 @@ npm install --save react-multi-carousel
 
 ## Syntax hilight
 
-```
+```bash
 npm install --save gatsby-remark-prismjs prismjs
 ```
 
