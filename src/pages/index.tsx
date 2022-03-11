@@ -26,6 +26,7 @@ export const query = graphql`
         frontmatter {
           date
           title
+          category
           thumbnailAlt
           thumbnail {
             childImageSharp {

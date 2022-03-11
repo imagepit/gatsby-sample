@@ -2,6 +2,7 @@
 title: "TypeScript基礎"
 date: "2021-01-19"
 published: true
+category: programing
 thumbnail: ../images/typescript-basic.png
 thumbnailAlt: "TypeScript基礎"
 ---

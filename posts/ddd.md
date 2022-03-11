@@ -2,6 +2,7 @@
 title: "ドメイン駆動設計"
 date: "2021-01-19"
 published: true
+category: system-design
 thumbnail: ../images/ddd-basic.png
 thumbnailAlt: "ドメイン駆動設計"
 ---
@@ -25,8 +26,6 @@ thumbnailAlt: "ドメイン駆動設計"
 - ネットワークについての基礎知識
 
 ## カリキュラム
-
-<div class="col2">
 
 #### 第1章 Kubernetes基礎知識
 
@@ -73,8 +72,6 @@ thumbnailAlt: "ドメイン駆動設計"
 - processNextWorkItem関数 
 - syncHandler関数 
 
-<div style="-webkit-column-break-before: always;"></div>
-
 #### 第6章 controller-runtimeとcontroller-tools
 
 - controller-toolsとは
@@ -104,8 +101,6 @@ thumbnailAlt: "ドメイン駆動設計"
 
 - Admission Webhook
 - Conversion Webhook
-
-</div>
 
 ## 演習問題
 

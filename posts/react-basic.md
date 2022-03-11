@@ -2,6 +2,7 @@
 title: "React入門"
 date: "2021-01-19"
 published: true
+category: software
 thumbnail: ../images/react-basic.png
 thumbnailAlt: "React入門"
 ---

@@ -2,6 +2,7 @@
 title: "Go言語Webプログラミング"
 date: "2021-01-19"
 published: true
+category: programing
 thumbnail: ../images/go-web.png
 thumbnailAlt: "Go言語Webプログラミング"
 ---

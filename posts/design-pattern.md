@@ -2,6 +2,7 @@
 title: "デザインパターン基礎"
 date: "2021-01-19"
 published: true
+category: system-design
 thumbnail: ../images/design-pattern-java.png
 thumbnailAlt: "デザインパターン基礎"
 ---

@@ -2,6 +2,7 @@
 title: "Kubernetes機能拡張入門"
 date: "2021-01-19"
 published: true
+category: software
 thumbnail: ../images/k8s-operator.png
 thumbnailAlt: "Kubernetes機能拡張入門"
 ---

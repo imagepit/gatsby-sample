@@ -2,13 +2,12 @@
 title: "クリーンアーキテクチャ入門"
 date: "2021-01-19"
 published: true
+category: system-design
 thumbnail: ../images/clean-archtecture.png
 thumbnailAlt: "クリーンアーキテクチャ入門"
 ---
 
 ## カリキュラム
-
-<div class="col2">
 
 #### 第1章 Kubernetes基礎知識
 
@@ -84,8 +83,6 @@ thumbnailAlt: "クリーンアーキテクチャ入門"
 
 - Admission Webhook
 - Conversion Webhook
-
-</div>
 
 ## 演習問題
 

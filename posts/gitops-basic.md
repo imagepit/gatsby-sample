@@ -2,6 +2,7 @@
 title: "GitOps基礎"
 date: "2021-01-19"
 published: true
+category: software
 thumbnail: ../images/gitops.png
 thumbnailAlt: "GitOps基礎"
 ---

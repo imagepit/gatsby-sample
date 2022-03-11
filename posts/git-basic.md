@@ -2,6 +2,7 @@
 title: "Git入門"
 date: "2021-01-19"
 published: true
+category: software
 thumbnail: ../images/git-basic.png
 thumbnailAlt: "Git入門"
 ---

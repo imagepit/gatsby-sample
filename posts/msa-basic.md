@@ -2,6 +2,7 @@
 title: "マイクロサービスアーキテクチャ入門"
 date: "2021-01-19"
 published: true
+category: system-design
 thumbnail: ../images/msa-basic.png
 thumbnailAlt: "Kubernetes機能拡張入門"
 ---

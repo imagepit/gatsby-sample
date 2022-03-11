@@ -1,6 +1,8 @@
 ---
 title: "Kubernetes基礎"
 date: "2021-01-19"
+published: true
+category: software
 thumbnail: ../images/k8s-basic.png
 thumbnailAlt: "Kubernetes基礎"
 ---

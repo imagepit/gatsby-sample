@@ -2,6 +2,7 @@
 title: "Go言語プログラミング基礎"
 date: "2021-01-19"
 published: true
+category: programing
 thumbnail: ../images/go-basic.png
 thumbnailAlt: "Go言語プログラミング基礎"
 ---
