@@ -1,8 +1,9 @@
 ---
-title: "Kubernetes基礎"
+title: "クリーンアーキテクチャ入門"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "Kubernetes基礎"
+published: true
+thumbnail: ../images/clean-archtecture.png
+thumbnailAlt: "クリーンアーキテクチャ入門"
 ---
 
 ## カリキュラム

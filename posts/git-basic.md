@@ -1,8 +1,9 @@
 ---
-title: "デザインパターン基礎"
+title: "Git入門"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "デザインパターン基礎"
+published: true
+thumbnail: ../images/git-basic.png
+thumbnailAlt: "Git入門"
 ---
 
 ## カリキュラム

@@ -1,8 +1,9 @@
 ---
-title: "GitOps基礎"
+title: "デザインパターン基礎"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "GitOps基礎"
+published: true
+thumbnail: ../images/design-pattern-java.png
+thumbnailAlt: "デザインパターン基礎"
 ---
 
 ## カリキュラム

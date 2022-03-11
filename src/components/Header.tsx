@@ -9,7 +9,7 @@ function Header() {
         <Navbar expand="md" variant="light">
           <Navbar.Brand href="/">
             <StaticImage
-              src="../images/logo.png"
+              src="../../images/logo.png"
               alt="イメージピット株式会社"
               width={130}
               placeholder="none"

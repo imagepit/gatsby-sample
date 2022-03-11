@@ -18,9 +18,9 @@ function Layout({ children }) {
           </Col>
         </Row>
       </Container>
-      <ContainerStyle fluid className="mt-5">
+      <ContainerStyle className="mt-5">
         <Row>
-          <Col md={{ span: 10, offset: 1 }} xs={12}>
+          <Col xs={12}>
             <main>{children}</main>
           </Col>
         </Row>

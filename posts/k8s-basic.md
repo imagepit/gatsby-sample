@@ -1,8 +1,8 @@
 ---
-title: "React入門"
+title: "Kubernetes基礎"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "React入門"
+thumbnail: ../images/k8s-basic.png
+thumbnailAlt: "Kubernetes基礎"
 ---
 
 ## カリキュラム

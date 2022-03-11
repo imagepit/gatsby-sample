@@ -1,14 +1,42 @@
 module.exports = {
+  siteMetadata: {
+    title: "はじめてのGatsby Site",
+    author: "Ryosuke Takahashi",
+    categories: [
+      {
+        slug: "system-design",
+        title: "システム設計",
+        description: "システム設計についての学習",
+      },
+      {
+        slug: "programing",
+        title: "プログラミング",
+        description: "プログラミングについての使い方の学習",
+      },
+      {
+        slug: "software",
+        title: "ソフトウェア・フレームワーク",
+        description: "ソフトウェア・フレームワークについての使い方の学習",
+      },
+    ],
+    user: { name: "John Doe", email: "john@example.com" },
+  },
   plugins: [
-    `gatsby-plugin-image`,
     // styled components
     `gatsby-plugin-styled-components`,
     // set md file directory
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src`,
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/images`,
       },
     },
     // mdx
@@ -23,7 +51,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
             },
           },
         ],
@@ -32,8 +60,26 @@ module.exports = {
     // sass css modules
     `gatsby-plugin-sass`,
     // image
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 50,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        }
+      }
+    },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
   ],
 };
 

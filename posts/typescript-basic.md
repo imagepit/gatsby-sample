@@ -1,8 +1,9 @@
 ---
-title: "Go言語Webプログラミング"
+title: "TypeScript基礎"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "Go言語Webプログラミング"
+published: true
+thumbnail: ../images/typescript-basic.png
+thumbnailAlt: "TypeScript基礎"
 ---
 
 ## カリキュラム

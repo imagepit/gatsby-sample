@@ -5,12 +5,19 @@ import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 const GlobalStyle = styled.div`
+  .card {
+    border-radius: 0;
+    border: 1px solid black;
+  }
   .card-body {
+    border-top: 1px solid black;
     padding: 0.5rem 0;
   }
   .card-title {
+    font-size: 16px;
     font-weight: bold;
     line-height: 150%;
+    text-align: center;
   }
 `;
 const GatsbyImageStyle = styled(GatsbyImage)`
@@ -27,12 +34,13 @@ const CardStyle = styled(Card)`
 `;
 export default function PostCardGroup(props) {
   const { data } = props;
+  // console.log(data.site.siteMetadata.categories);
   return (
     <GlobalStyle>
       <Row>
         {data.allMdx.nodes.map((node) => (
           <Col
-            lg={4}
+            lg={3}
             md={4}
             sm={6}
             xs={12}
@@ -50,7 +58,7 @@ export default function PostCardGroup(props) {
                   <StaticImage
                     style={staticImageStyle}
                     alt="no image"
-                    src="../images/default_thumbnail.jpg"
+                    src="../../images/no-image.png"
                   />
                 )}
               </Link>

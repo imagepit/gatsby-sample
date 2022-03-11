@@ -1,8 +1,9 @@
 ---
-title: "Go言語プログラミング基礎"
+title: "GitOps基礎"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "Go言語プログラミング基礎"
+published: true
+thumbnail: ../images/gitops.png
+thumbnailAlt: "GitOps基礎"
 ---
 
 ## カリキュラム

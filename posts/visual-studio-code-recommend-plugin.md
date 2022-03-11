@@ -1,7 +1,8 @@
 ---
 title: "[随時更新]Visual Studio Codeのおすすめエクステンション（拡張機能）紹介"
 date: 2021-01-19
-thumbnail: "../images/cat.jpg"
+published: false
+thumbnail: "../images/no-image.png"
 thumbnailAlt: Visual Studio Codeのおすすめエクステンション
 ---
 

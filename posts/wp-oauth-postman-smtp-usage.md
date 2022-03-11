@@ -1,7 +1,8 @@
 ---
 title: GmailAPIで迷惑メールにならずメール送信できるWordpressプラグイン「PostmanSMTP」の使い方
 date: 2021-01-19
-thumbnail: "../images/cat.jpg"
+published: false
+thumbnail: "../images/no-image.png"
 thumbnailAlt: "猫ねこネコ"
 ---
 

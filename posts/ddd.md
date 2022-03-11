@@ -1,9 +1,28 @@
 ---
-title: "マイクロサービスアーキテクチャ入門"
+title: "ドメイン駆動設計"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "Kubernetes機能拡張入門"
+published: true
+thumbnail: ../images/ddd-basic.png
+thumbnailAlt: "ドメイン駆動設計"
 ---
+
+## 概要
+
+博報堂プロダクツは、12の事業本部と３つの支社、さらに9つのグループ会社からなる製販一体型の総合制作事業会社です。
+
+「こしらえる」という創業以来ブレない力を武器に、専門性と実施力で勝負してきました。そして今、デジタルという新たな景色が広がっています。今まで想像もしなかった体験が日々生み出されているこの時代において、私たちがやるべきこと。
+
+## 対象者
+
+- システム開発プロジェクトに携わっている人
+- マイクロサービスアーキテクチャに興味がある人
+
+## 前提とする知識
+
+- オブジェクト指向のプログラミング言語（Java）の基礎知識
+- Windowsの基本的な使い方の知識
+- Linuxについての基礎知識
+- ネットワークについての基礎知識
 
 ## カリキュラム
 
@@ -53,6 +72,8 @@ thumbnailAlt: "Kubernetes機能拡張入門"
 - メインロジック(Reconcile) 
 - processNextWorkItem関数 
 - syncHandler関数 
+
+<div style="-webkit-column-break-before: always;"></div>
 
 #### 第6章 controller-runtimeとcontroller-tools
 

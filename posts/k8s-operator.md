@@ -1,8 +1,9 @@
 ---
-title: "Git入門"
+title: "Kubernetes機能拡張入門"
 date: "2021-01-19"
-thumbnail: ../images/google-kubernetes.jpeg
-thumbnailAlt: "Git入門"
+published: true
+thumbnail: ../images/k8s-operator.png
+thumbnailAlt: "Kubernetes機能拡張入門"
 ---
 
 ## カリキュラム
