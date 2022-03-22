@@ -39,6 +39,28 @@ module.exports = {
         path: `${__dirname}/images`,
       },
     },
+    // remark
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [
+          'gatsby-remark-relative-images',
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-images-remote`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+      },
+    },
     // mdx
     {
       resolve: `gatsby-plugin-mdx`,

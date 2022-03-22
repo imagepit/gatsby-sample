@@ -38,7 +38,7 @@ export default function PostCardGroup(props) {
   return (
     <GlobalStyle>
       {data.site.siteMetadata.categories.map((category) => (
-        <Row>
+        <Row key={category.slug}>
           <h3>{category.title}</h3>
           <p>{category.description}</p>
           {data.allMdx.nodes

@@ -2,33 +2,7 @@ import React, { useEffect } from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 import styled from 'styled-components';
-
-// highlightjs
-import hljs from 'highlight.js/lib/core';
-import css from 'highlight.js/lib/languages/css';
-import dockerfile from 'highlight.js/lib/languages/dockerfile';
-import go from 'highlight.js/lib/languages/go';
-import javascript from 'highlight.js/lib/languages/javascript';
-import json from 'highlight.js/lib/languages/json';
-import scss from 'highlight.js/lib/languages/scss';
-import bash from 'highlight.js/lib/languages/bash';
-import typescript from 'highlight.js/lib/languages/typescript';
-import xml from 'highlight.js/lib/languages/xml';
-import yaml from 'highlight.js/lib/languages/yaml';
-import markdown from 'highlight.js/lib/languages/markdown';
-import 'highlight.js/styles/github.css';
-
-hljs.registerLanguage(`bash`, bash);
-hljs.registerLanguage(`css`, css);
-hljs.registerLanguage(`dockerfile`, dockerfile);
-hljs.registerLanguage(`go`, go);
-hljs.registerLanguage(`js`, javascript);
-hljs.registerLanguage(`json`, json);
-hljs.registerLanguage(`scss`, scss);
-hljs.registerLanguage(`ts`, typescript);
-hljs.registerLanguage(`yaml`, yaml);
-hljs.registerLanguage(`md`, markdown);
-hljs.registerLanguage(`xml`, xml);
+import highlight from '@/lib/highlight';
 
 const GlobalStyle = styled.div`
   #main-content {
@@ -62,6 +36,7 @@ const GlobalStyle = styled.div`
   .hljs {
     background: #fafafa;
     border: 1px solid #000;
+    line-height: 120%;
   }
   pre > code.language-bash {
     background-color: black !important;
@@ -72,7 +47,7 @@ const GlobalStyle = styled.div`
 
 function Markdown({ children }) {
   useEffect(() => {
-    hljs.highlightAll();
+    highlight();
   });
   return (
     <div>

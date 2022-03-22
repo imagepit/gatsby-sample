@@ -20,6 +20,8 @@ export default function Home({ data }) {
   const { thumbnailAlt } = data.mdx.frontmatter;
   const { body } = data.mdx;
   const { title } = data.mdx.frontmatter;
+  // const { htmlAst } = data.markdownRemark
+  // console.log(mdxAST.children.filter(item => item.type == "list"));
   return (
     <Layout>
       <main id="main-content">
@@ -32,6 +34,7 @@ export default function Home({ data }) {
         </ThumbnailStyle>
         <Title>{title}</Title>
         <Markdown>{body}</Markdown>
+        {/* <div id="ast">{renderAst(htmlAst)}</div> */}
       </main>
     </Layout>
   );
@@ -51,6 +54,9 @@ export const query = graphql`
       }
       body
       tableOfContents
+    }
+    markdownRemark {
+      htmlAst
     }
   }
 `;
