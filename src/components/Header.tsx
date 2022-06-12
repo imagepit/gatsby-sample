@@ -1,11 +1,16 @@
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import { StaticImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+
+const GlobalStyle = styled.header`
+  border-bottom: 1px solid black;
+`;
 
 function Header() {
   return (
-    <header>
-      <Container>
+    <GlobalStyle>
+      <Container fluid>
         <Navbar expand="md" variant="light">
           <Navbar.Brand href="/">
             <StaticImage
@@ -32,7 +37,7 @@ function Header() {
           </Navbar.Collapse> */}
         </Navbar>
       </Container>
-    </header>
+    </GlobalStyle>
   );
 }
 

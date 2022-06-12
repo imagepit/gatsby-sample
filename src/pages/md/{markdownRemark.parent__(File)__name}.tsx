@@ -1,19 +1,43 @@
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
-import Layout from '@/components/Layout';
 import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import RehypeReact from 'rehype-react';
 import highlight from '@/lib/highlight';
+import BackgroundImage from 'gatsby-background-image';
+import LayoutFluid from '@/components/LayoutFluid';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const ThumbnailStyle = styled.div`
-  text-align: center;
-  margin-bottom: 2em;
+  /* text-align: center; */
+  /* margin-bottom: 2em; */
+  border: 1px solid black;
+  box-shadow: 4px 5px 10px #666;
 `;
 const Title = styled.h1`
   font-weight: bold;
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 25px;
+  font-size: 28px;
+`;
+
+const ContentHeader = styled.div`
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 45px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid black;
+  .bgimage {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute !important;
+    filter: blur(100px);
+    z-index: -1;
+  }
 `;
 
 const renderAst = new RehypeReact({
@@ -48,13 +72,23 @@ const GlobalStyle = styled.div`
   h3,
   h4 {
     font-weight: bold;
-    margin: 20px 0 !important;
   }
   h2 {
+    font-size: 22px;
     padding: 15px;
-    margin-top: 20px !important;
+    margin: 20px 0 !important;
     border-left: 8px solid black;
     border-bottom: 1px solid black;
+  }
+  h3 {
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    padding-bottom: 5px;
+  }
+  ul {
+    font-size: 16px;
+    line-height: 130%;
   }
   img {
     border: 1px solid black;
@@ -77,29 +111,67 @@ const GlobalStyle = styled.div`
   }
 `;
 
-export default function Home({ data }) {
+export default function Post({ data }) {
   const thumbnail = getImage(data.markdownRemark.frontmatter.thumbnail);
-  const { title, thumbnailAlt } = data.markdownRemark.frontmatter;
+  const { title, thumbnailAlt, description } = data.markdownRemark.frontmatter;
   const { htmlAst } = data.markdownRemark;
+  const imageData =
+    data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid;
 
   useEffect(() => {
     highlight();
   });
 
   return (
-    <Layout>
-      <main id="main-content">
-        <ThumbnailStyle>
-          {thumbnail ? (
-            <GatsbyImage image={thumbnail} alt={thumbnailAlt} />
-          ) : (
-            <StaticImage alt="no image" src="../../../images/no-image.png" />
-          )}
-        </ThumbnailStyle>
-        <Title>{title}</Title>
-        <GlobalStyle>{renderAst(htmlAst)}</GlobalStyle>
-      </main>
-    </Layout>
+    <LayoutFluid>
+      <ContentHeader>
+        <BackgroundImage
+          Tag="section"
+          className="bgimage"
+          fluid={imageData}
+          backgroundColor="#040e18"
+        />
+        <Container>
+          <Row>
+            <Col
+              lg={{ span: 4, offset: 1 }}
+              md={{ span: 4, offset: 1 }}
+              sm={12}
+              xs={12}
+            >
+              <ThumbnailStyle>
+                {thumbnail ? (
+                  <GatsbyImage image={thumbnail} alt={thumbnailAlt} />
+                ) : (
+                  <StaticImage
+                    alt="no image"
+                    src="../../../images/no-image.png"
+                  />
+                )}
+              </ThumbnailStyle>
+            </Col>
+            <Col lg={6} md={6} sm={12} xs={12}>
+              <Title>{title}</Title>
+              <div>{description}</div>
+            </Col>
+          </Row>
+        </Container>
+      </ContentHeader>
+      <Container>
+        <Row>
+          <Col
+            lg={{ span: 10, offset: 1 }}
+            md={{ span: 10, offset: 1 }}
+            sm={12}
+            xs={12}
+          >
+            <main id="main-content">
+              <GlobalStyle>{renderAst(htmlAst)}</GlobalStyle>
+            </main>
+          </Col>
+        </Row>
+      </Container>
+    </LayoutFluid>
   );
 }
 
@@ -111,9 +183,13 @@ export const query = graphql`
         thumbnail {
           childImageSharp {
             gatsbyImageData(quality: 100)
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
         thumbnailAlt
+        description
       }
       htmlAst
       tableOfContents

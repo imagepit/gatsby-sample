@@ -5,8 +5,8 @@ module.exports = {
     categories: [
       {
         slug: "system-design",
-        title: "システム設計",
-        description: "システム設計についての学習",
+        title: "ソフトウェア開発手法",
+        description: "ソフトウェア開発手法についての学習",
       },
       {
         slug: "programing",

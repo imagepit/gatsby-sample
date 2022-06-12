@@ -53,7 +53,7 @@ export default function PostCardGroup(props) {
                 className="d-flex align-items-stretch mb-4"
               >
                 <CardStyle key={node.id}>
-                  <Link to={`post/${node.parent.name}`}>
+                  <Link to={`md/${node.parent.name}`}>
                     {getImage(node.frontmatter.thumbnail) ? (
                       <GatsbyImageStyle
                         image={getImage(node.frontmatter.thumbnail)}

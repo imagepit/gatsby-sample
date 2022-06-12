@@ -20,6 +20,26 @@ cd gatsby-starter-ts
 gatsby develop
 ```
 
+## 依存関係
+
+名前|バージョン|説明
+---|---|---
+gatsby|4.9.3|Gatsby.js本体
+gatsby-background-image|1.6.0|背景画像`<BackgroundImage>`を使うためのプラグイン
+gatsby-plugin-image|2.9.1|画像処理を行うための静的画像用タグ`<StaticImage>`や動的画像用タグ`<GatsbyImage>`を扱うためのプラグイン
+gatsby-plugin-mdx|3.8.1|MDXを使うためのプラグイン
+gatsby-plugin-sass|5.7.0|sassを使うためのプラグイン
+gatsby-plugin-sharp|4.9.1|色々サイズの画像を複数生成してくれるプラグイン
+gatsby-plugin-styled-components|5.9.0|Styled Component CSSを使うためのプラグイン
+gatsby-remark-autolink-headers|5.7.0|記事にあるHeadingタグにシャープ（#)付きのURLであるURLフラグメントを付けるプラグイン
+gatsby-remark-images|6.6.0|Markdown内の画像を表示するプラグイン
+gatsby-remark-images-remote|1.1.0|Markdown内の外部URLの画像もgatsby-imageで最適化するプラグイン
+gatsby-remark-relative-images|2.0.2|Markdownファイルからの相対パスで画像ファイルを指定できるようにする
+gatsby-remark-table-of-contents|2.0.0|Markdown記事に目次と見出しへのアンカー設定を実装する
+gatsby-source-filesystem|4.6.0|ローカルのファイルシステムとGatsbyをつなぐインターフェイスになるプラグイン
+gatsby-transformer-remark|5.6.0|Remarkを使用してMarkdownファイルを解析する
+gatsby-transformer-sharp|4.9.0|色々サイズの画像を最適化してくれるプラグイン
+
 ## Markdown入稿
 
 ### gatsby-transformer-remarkのインストール
@@ -663,6 +683,14 @@ module.exports = {
   plugins: [`gatsby-plugin-styled-components`],
 }
 ```
+
+## gatsby-background-imageを使った背景画像の利用
+
+```cmd
+npm install --save gatsby-background-image gbimage-bridge
+```
+
+
 
 ---
 

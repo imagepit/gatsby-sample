@@ -1,12 +1,30 @@
 ---
-title: "React入門"
+title: "テスト駆動開発"
 date: "2021-01-19"
 published: true
-category: software
-thumbnail: ../images/react-basic.png
-thumbnailAlt: "React入門"
+category: system-design
+thumbnail: ../images/ddd-basic.png
+thumbnailAlt: "テスト駆動開発"
 description: マイクロサービスは小さいサービスの集まったものであり全体で1つの大きなサービスを構成します。本研修ではマイクロサービスアーキテクチャの基本的な概念の理解と実際にマイクロサービスとしてアプリケーションの実装、運用、デプロイをしながらその勘所を学習します。
 ---
+
+## 概要
+
+博報堂プロダクツは、12の事業本部と３つの支社、さらに9つのグループ会社からなる製販一体型の総合制作事業会社です。
+
+「こしらえる」という創業以来ブレない力を武器に、専門性と実施力で勝負してきました。そして今、デジタルという新たな景色が広がっています。今まで想像もしなかった体験が日々生み出されているこの時代において、私たちがやるべきこと。
+
+## 対象者
+
+- システム開発プロジェクトに携わっている人
+- マイクロサービスアーキテクチャに興味がある人
+
+## 前提とする知識
+
+- オブジェクト指向のプログラミング言語（Java）の基礎知識
+- Windowsの基本的な使い方の知識
+- Linuxについての基礎知識
+- ネットワークについての基礎知識
 
 ## カリキュラム
 
@@ -80,7 +98,7 @@ description: マイクロサービスは小さいサービスの集まったも�
 - controller.goを編集してReconcileを実装
 - 実行フェーズとしてOperatorを実際に動かす 
 
-### 第9章 Custom Resourceの応用機能を実装しよう
+### 第 9章 Custom Resourceの応用機能を実装しよう
 
 - Admission Webhook
 - Conversion Webhook
