@@ -1,5 +1,26 @@
 # Gatsby.js + Typescriptサンプル
 
+## TODO
+
+- [ ] TOCの配置
+  - [ ] サイドバー
+  - [ ] 記事上部
+- [ ] トップページのレイアウト
+  - [ ] 記事のカルーセル表示
+- [ ] パンくずリスト
+- [ ] ヘッダー
+  - [ ] グローバルメニュー
+  - [ ] 検索窓
+- [ ] SNSリンク
+- [ ] フッター
+  - [ ] 次のサイトのようなもの
+    - [ ] https://www.extage-marketing.co.jp/web-school/nofollow/
+- [ ] 人気記事一覧
+  - [ ] https://kinnikumegane.com/posts/popularlist/
+- [ ] 辞典ページ作成
+  - [ ] https://terakoya.site/ios_dic/ios-dic-orientation/
+- [ ] Dockerイメージ化
+
 ## 環境構築
 
 ```
